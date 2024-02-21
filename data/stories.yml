@@ -1,0 +1,76 @@
+version: "3.1"
+
+
+stories:
+- story: greet and happy
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: child_happy
+    - action: utter_happy_message
+
+- story: show image and ask feeling
+  steps:
+    - intent: child_image_response
+    - action: utter_image
+    - intent: child_image_check
+    - action: utter_about_image
+
+- story: happy and ask for another image
+  steps:
+    - intent: child_happy
+    - action: utter_happy_end
+    - intent: child_image_response
+    - action: utter_another_image
+    - intent: child_image_check
+    - action: utter_about_image
+
+- story: unhappy and offer another image
+  steps:
+    - intent: child_unhappy
+    - action: utter_sad_message
+    - intent: child_image_response
+    - action: utter_another_image
+    - intent: child_image_check
+    - action: utter_about_image
+
+- story: greet and sad
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: child_unhappy
+    - action: utter_sad_message
+
+- story: show image and ask feeling for sad child
+  steps:
+    - intent: child_image_response
+    - action: utter_image
+    - intent: child_image_check
+    - action: utter_about_image
+
+- story: sad and ask for another image
+  steps:
+    - intent: child_unhappy
+    - action: utter_sad_message
+    - intent: child_image_response
+    - action: utter_another_image
+    - intent: child_image_check
+    - action: utter_about_image
+
+
+- story: greet and happy but remains sad
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: child_happy
+    - action: utter_happy_message
+    - intent: child_unhappy
+    - action: utter_sad_message
+
+- story: sad and declines image
+  steps:
+    - intent: child_unhappy
+    - action: utter_sad_message
+    - intent: deny
+    - action: utter_offer_support
+

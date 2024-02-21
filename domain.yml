@@ -1,0 +1,53 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - child_happy
+  - child_unhappy
+  - child_angry
+  - child_image_response
+  - child_image_check
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_image_msg:
+    - text: "Would you like me to show you an image?"
+
+  utter_image:
+   - text: "Here is the image:"
+     image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_about_image:
+    - text: "How do you feel after seeing the image?"
+
+  utter_happy_message:
+    - text: "That's great! Do you want me to show image?"
+
+  utter_another_image:
+    - text: "Here is the image:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_happy_end:
+    - text: "Good to hear that! I hope you enjoyed the conversation and we'll meet again."
+
+  utter_sad_message:
+    - text: "Sorry to hear that. Let me show you image, maybe it will cheer you up."
+
+  utter_offer_support:
+    - text: "I understand. If there's anything else I can do to help, please let me know."
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
